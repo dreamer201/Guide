@@ -1,2 +1,2 @@
 # guide
-setting up
+Setting up a POLIS masternode guide. Noobs friendly.
