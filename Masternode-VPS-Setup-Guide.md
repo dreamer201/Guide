@@ -1,9 +1,9 @@
 ## Preperation
 
 1. Get a VPS from a provider like DigitalOcean, Vultr, Linode, etc. 
-   - Recommended VPS size: 512mb or 1gb RAM 
+   - Recommended VPS size at least 1gb RAM 
    - **It must be Ubuntu 16.04 (Xenial)**
-2. Make sure you have a transaction of exactly 1000 ORE in your desktop cold wallet.
+2. Make sure you have a transaction of exactly 1000 POLIS in your desktop cold wallet.
 
 ## Cold Wallet Setup Part 1
 
@@ -11,9 +11,9 @@
 2. Go to the tab at the bottom that says "Tools"
 3. Go to the tab at the top that says "Console"
 4. Run the following command: `masternode genkey`
-5. You should see a long key that starts with 7:
+5. You should see a long key that looks like:
 ```
-7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+73HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg
 ```
 6. This is your `private key`, keep it safe, do not share with anyone.
 
