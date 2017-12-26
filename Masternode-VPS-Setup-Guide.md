@@ -26,7 +26,7 @@
    - Windows users [follow this guide](https://www.digitalocean.com/community/tutorials/how-to-log-into-your-droplet-with-putty-for-windows-users) to log into your VPS.
 2. Copy command into the VPS command line and hit enter:
 ```
-wget https://raw.githubusercontent.com/galactrum/galactrum/master/contrib/masternode/install_masternode.sh && chmod +x install_masternode.sh && ./install_masternode.sh
+wget https://github.com/digitalmine/Guide/blob/master/install_masternode.sh
 ```
 3. When prompted, enter your private key from before.
 4. You will be asked for your VPS IP and a few other questions.
