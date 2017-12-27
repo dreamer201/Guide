@@ -4,6 +4,8 @@
  * With added security features to your VPS
  * and Sentinel
  
+ https://github.com/digitalmine/Guide/blob/master/Masternode-VPS-Setup-Guide.md
+ 
  
  ENJOY !
  
