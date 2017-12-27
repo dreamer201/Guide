@@ -61,6 +61,7 @@ Your poliscore (`polisd`) should be up and running by now.
    * Windows: `%APPDATA%\polisCore\`
    * Mac OS: `~/Library/Application Support/polisCore/`
    * Unix/Linux: `~/.poliscore/`
+   
    Leave the file open
 2. Go to "Tools" -> "Debug console"
 3. Run the following command: `masternode outputs`
