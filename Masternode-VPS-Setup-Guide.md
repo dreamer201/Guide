@@ -8,6 +8,7 @@
 ## Cold Wallet Setup Part 1
 
 1. Open your wallet on your desktop.
+
    Click Settings -> Options -> Wallet
    Check "Enable coin control features"
    Check "Show Masternodes Tab"
