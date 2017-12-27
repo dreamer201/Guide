@@ -14,7 +14,11 @@
    Check "Enable coin control features"
    
    Check "Show Masternodes Tab"
+   
    Press Ok (you will need to restart the wallet)
+   
+   ![Alt text](/relative/path/to/img.jpg?raw=true "Polis Wallet Settings")
+
    
    
    
