@@ -17,7 +17,7 @@
    
    Press Ok (you will need to restart the wallet)
    
-   ![Alt text](/relative/path/to/img.jpg?raw=true "Polis Wallet Settings")
+   ![Alt text](https://imgur.com/a/2LF7l "Wallet Settings")
 
    
    
