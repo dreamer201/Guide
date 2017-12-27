@@ -13,6 +13,7 @@
    Check "Show Masternodes Tab"
    Press Ok (you will need to restart the wallet)
    
+   
 2. Go to the tab at the bottom that says "Tools"
 3. Go to the tab at the top that says "Console"
 4. Run the following command: `masternode genkey`
