@@ -22,14 +22,13 @@
    
    
    
-2. Go to the tab at the bottom that says "Tools"
-3. Go to the tab at the top that says "Console"
-4. Run the following command: `masternode genkey`
-5. You should see a long key that looks like:
+2. Go to the "Tools" -> "Debug console"
+3. Run the following command: `masternode genkey`
+4. You should see a long key that looks like:
 ```
-73HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg
+3HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg
 ```
-6. This is your `private key`, keep it safe, do not share with anyone.
+5. This is your `private key`, keep it safe, do not share with anyone.
 
 
 
@@ -82,4 +81,4 @@ mn1 1.2.3.4:24126 3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 12345678xxxxxxxxxxx
 10. You will see "WATCHDOG_EXPIRED". Just wait few minutes
 
 Congratulations, your setup should now be complete! If you did like it, you can buy me
-a cup of coffee PBNTK2AApqLETnSkL4pNq1XaMjJnTySt8j. Cheers
+a cup of coffee PBNTK2AApqLETnSkL4pNq1XaMjJnTySt8j. Cheers !
