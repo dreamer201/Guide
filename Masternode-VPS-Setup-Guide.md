@@ -10,9 +10,13 @@
 1. Open your wallet on your desktop.
 
    Click Settings -> Options -> Wallet
+   
    Check "Enable coin control features"
+   
    Check "Show Masternodes Tab"
+   
    Press Ok (you will need to restart the wallet)
+   
    
    
 2. Go to the tab at the bottom that says "Tools"
