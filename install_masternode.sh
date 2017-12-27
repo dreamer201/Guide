@@ -113,7 +113,9 @@ if [[ ("$UFW" == "y" || "$UFW" == "Y" || "$UFW" == "") ]]; then
     sudo ufw default allow outgoing
     sudo ufw allow ssh
     sudo ufw allow 24126/tcp
-    echo "y" | sudo ufw enable
+    
+    
+    sudo ufw enable
     echo && echo "Firewall installed and enabled!"
 fi
 
