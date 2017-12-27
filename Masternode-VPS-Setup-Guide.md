@@ -56,8 +56,8 @@ Your poliscore (`polisd`) should be up and running by now.
 
 ## Cold Wallet Setup Part 2 
 
-1. On your local machine open your `masternode.conf`
-   depending on your operating system:
+1. On your local machine open your `masternode.conf` file.
+   Depending on your operating system you will find it in:
    * Windows: `%APPDATA%\polisCore\`
    * Mac OS: `~/Library/Application Support/polisCore/`
    * Unix/Linux: `~/.poliscore/`
