@@ -6,7 +6,9 @@
  ENJOY !
  
  PS
+ 
  Writing this guide I derived a lot of from similar project
+ 
  https://github.com/galactrum/galactrum/wiki/Masternode-VPS-Setup-Guide
 
 
