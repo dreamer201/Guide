@@ -8,6 +8,11 @@
 ## Cold Wallet Setup Part 1
 
 1. Open your wallet on your desktop.
+   Click Settings -> Options -> Wallet
+   Check "Enable coin control features"
+   Check "Show Masternodes Tab"
+   Press Ok (you will need to restart the wallet)
+   
 2. Go to the tab at the bottom that says "Tools"
 3. Go to the tab at the top that says "Console"
 4. Run the following command: `masternode genkey`
@@ -26,11 +31,11 @@
    - Windows users [follow this guide](https://www.digitalocean.com/community/tutorials/how-to-log-into-your-droplet-with-putty-for-windows-users) to log into your VPS.
 2. Copy command into the VPS command line and hit enter:
 ```
-wget https://github.com/digitalmine/Guide/blob/master/install_masternode.sh
+wget https://github.com/digitalmine/Guide/blob/master/install_masternode.sh && chmod +x install_masternode.sh && ./install_masternode.sh
 ```
 3. When prompted, enter your private key from before.
 4. You will be asked for your VPS IP and a few other questions.
-5. The installation should finish successfully. Ask for help [in discord](https://discord.gg/zQcPK9G) if it doesn't.
+5. The installation should finish successfully. 
 
 
 
@@ -40,7 +45,7 @@ wget https://github.com/digitalmine/Guide/blob/master/install_masternode.sh
 2. Go to the tab at the bottom that says "Tools"
 3. Go to the tab at the top that says "Console"
 4. Run the following command: `masternode outputs`
-5. You should see output like the following if you have a transaction with exactly 1000 ORE:
+5. You should see output like the following if you have a transaction with exactly 1000 POLIS:
 ```
 {
     "12345678xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx": "0"
@@ -49,9 +54,9 @@ wget https://github.com/digitalmine/Guide/blob/master/install_masternode.sh
 6. The value on the left is your `txid` and the right is the `vout`
 7. Go the the tab at the bottom that says "Settings"
 8. Click "Open Masternode Configuration File"
-9. Add a line to the bottom of the file using the VPS IP (with port 6270), `private key`, `txid` and `vout`:
+9. Add a line to the bottom of the file using the VPS IP (with port 24126), `private key`, `txid` and `vout`:
 ```
-mn1 1.2.3.4:6270 7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 12345678xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 0 
+mn1 1.2.3.4:24126 7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 12345678xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 0 
 ```
 10. Save the file, exit your wallet and reopen your wallet.
 11. Go to the tab at the bottom that says "Tools"
