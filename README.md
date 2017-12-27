@@ -2,6 +2,7 @@
  for setting up a POLIS masternode.
  * Noobs friendly.
  * With added security features to your VPS
+ * swap
  * and Sentinel
  
  https://github.com/digitalmine/Guide/blob/master/Masternode-VPS-Setup-Guide.md
