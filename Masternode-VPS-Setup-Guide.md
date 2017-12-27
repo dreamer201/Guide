@@ -45,34 +45,41 @@ wget https://github.com/digitalmine/Guide/blob/master/install_masternode.sh && c
 3. When prompted, enter your private key from before.
 4. You will be asked for your VPS IP and a few other questions.
 5. The installation should finish successfully. 
+6. Copy command to source alias
+```
+source ~/.bash_aliases
+```
+Your poliscore (`polisd`) should be up and running by now.
+7.Use `polis-cli getinfo` to check and wait til it's synced 
+  (look for blocks number and compare with block explorer http://polispay.org:3001/ )
 
 
+## Cold Wallet Setup Part 2 
 
-## Cold Wallet Setup Part 2
-
-1. Open your wallet on your desktop.
-2. Go to the tab at the bottom that says "Tools"
-3. Go to the tab at the top that says "Console"
-4. Run the following command: `masternode outputs`
-5. You should see output like the following if you have a transaction with exactly 1000 POLIS:
+1. On your local machine open your `masternode.conf`
+   depending on your operating system:
+   * Windows: `%APPDATA%\polisCore\`
+   * Mac OS: `~/Library/Application Support/polisCore/`
+   * Unix/Linux: `~/.poliscore/`
+   Leave the file open
+2. Go to "Tools" -> "Debug console"
+3. Run the following command: `masternode outputs`
+4. You should see output like the following if you have a transaction with exactly 1000 POLIS:
 ```
 {
     "12345678xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx": "0"
 }
 ```
-6. The value on the left is your `txid` and the right is the `vout`
-7. Go the the tab at the bottom that says "Settings"
-8. Click "Open Masternode Configuration File"
-9. Add a line to the bottom of the file using the VPS IP (with port 24126), `private key`, `txid` and `vout`:
+5. The value on the left is your `txid` and the right is the `vout`
+6. Add a line to the bottom of the already opened `masternode.conf` file using the IP of your
+VPS (with port 24126), `private key`, `txid` and `vout`:
 ```
-mn1 1.2.3.4:24126 7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 12345678xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 0 
+mn1 1.2.3.4:24126 3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 12345678xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 0 
 ```
-10. Save the file, exit your wallet and reopen your wallet.
-11. Go to the tab at the bottom that says "Tools"
-12. Go to the tab at the top that says "Console"
-13. Run the command:
-```
-masternode start-alias mn1
-```
+7. Save the file, exit your wallet and reopen your wallet.
+8. Go to the "Masternodes" tab
+9. Click "Start All"
+10. You will see "WATCHDOG_EXPIRED". Just wait few minutes
 
-Congratulations, your setup should now be complete! [Ask for help in discord](https://discord.gg/zQcPK9G) if you need.
+Congratulations, your setup should now be complete! If you did like it, you can buy me
+a cup of coffee PBNTK2AApqLETnSkL4pNq1XaMjJnTySt8j. Cheers
