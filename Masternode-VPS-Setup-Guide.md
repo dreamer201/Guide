@@ -17,7 +17,7 @@
    
    Press Ok (you will need to restart the wallet)
    
-   ![Alt text](https://imgur.com/a/2LF7l "Wallet Settings")
+   ![Alt text](https://github.com/digitalmine/Guide/blob/master/poliswalletsettings.png "Wallet Settings")
 
    
    
