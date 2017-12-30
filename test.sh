@@ -61,9 +61,6 @@ if [[ ("$add_swap" == "y" || "$add_swap" == "Y" || "$add_swap" == "") ]]; then
 fi
 
 
-# Add masternode group and user
-sudo groupadd masternode
-sudo useradd -m -g masternode masternode
 
 # Update system 
 echo && echo "Upgrading system..."
@@ -143,17 +140,14 @@ cd polis
 ./autogen.sh
 ./configure
 make
-cd src
-mv polis{d,-cli} /usr/local/bin
-
 
 # Create config for poliscore
 echo && echo "Configuring poliscore-1.0.0..."
 sleep 3
 rpcuser=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
 rpcpassword=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
-sudo mkdir -p /home/masternode/.poliscore
-sudo touch /home/masternode/.poliscore/polis.conf
+mkdir -p /home/masternode/.poliscore
+touch /home/masternode/.poliscore/polis.conf
 echo '
 rpcuser='$rpcuser'
 rpcpassword='$rpcpassword'
@@ -166,8 +160,8 @@ maxconnections=256
 externalip='$ip'
 masternodeprivkey='$key'
 masternode=1
-' | sudo -E tee /home/masternode/.poliscore/polis.conf
-sudo chown -R masternode:masternode /home/masternode/.poliscore
+' | tee /home/masternode/.poliscore/polis.conf
+
 
 # Setup systemd service
 echo && echo "Starting polis deamon..."
@@ -180,8 +174,8 @@ After=network.target
 Type=simple
 User=masternode
 WorkingDirectory=/home/masternode
-ExecStart=/usr/local/bin/polisd -conf=/home/masternode/.poliscore/polis.conf -datadir=/home/masternode/.poliscore
-ExecStop=/usr/local/bin/polis-cli -conf=/home/masternode/.poliscore/polis.conf -datadir=/home/masternode/.poliscore stop
+ExecStart=/home/masternode/polis/src/polisd -conf=/home/masternode/.poliscore/polis.conf -datadir=/home/masternode/.poliscore
+ExecStop=/home/masternode/polis/src/polis-cli -conf=/home/masternode/.poliscore/polis.conf -datadir=/home/masternode/.poliscore stop
 Restart=on-abort
 [Install]
 WantedBy=multi-user.target
@@ -204,10 +198,10 @@ sudo chown -R masternode:masternode /home/masternode/sentinel
 cd ~
 
 # Add alias to run polis-cli
-echo && echo "Masternode setup complete!"
-touch ~/.bash_aliases
-echo "alias polis-cli='polis-cli -conf=/home/masternode/.poliscore/polis.conf -datadir=/home/masternode/.poliscore'" | tee -a ~/.bash_aliases
+#echo && echo "Masternode setup complete!"
+#touch ~/.bash_aliases
+#echo "alias polis-cli='polis-cli -conf=/home/masternode/.poliscore/polis.conf -datadir=/home/masternode/.poliscore'" | tee -a ~/.bash_aliases
 
-echo && echo "Now run 'source ~/.bash_aliases' (without quotes) to use polis-cli"
+#echo && echo "Now run 'source ~/.bash_aliases' (without quotes) to use polis-cli"
 
 
