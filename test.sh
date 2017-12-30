@@ -63,19 +63,22 @@ fi
 
 # Update system 
 echo && echo "Upgrading system..."
+echo
 sleep 3
 sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # Add Berkely PPA
 echo && echo "Installing bitcoin PPA..."
+echo
 sleep 3
 sudo apt-get -y install software-properties-common
 sudo apt-add-repository -y ppa:bitcoin/bitcoin
 sudo apt-get -y update
 
 # Install required packages
-echo && echo "Installing base packages..."
+echo && echo "Installing base packages and dependencies..."
+echo
 sleep 3
 sudo apt-get -y install \
     wget \
@@ -103,7 +106,8 @@ sudo apt-get -y install \
 
 # Install fail2ban if needed
 if [[ ("$install_fail2ban" == "y" || "$install_fail2ban" == "Y" || "$install_fail2ban" == "") ]]; then
-    echo && echo "Installing fail2ban..."
+    echo && echo "Installing fail2ban (intrusion prevention software that protects computer servers from brute-force attacks)..."
+    echo
     sleep 3
     sudo apt-get -y install fail2ban
     sudo service fail2ban restart 
@@ -111,7 +115,8 @@ fi
 
 # Install firewall if needed
 if [[ ("$UFW" == "y" || "$UFW" == "Y" || "$UFW" == "") ]]; then
-    echo && echo "Installing UFW..."
+    echo && echo "Installing UFW (Uncomplicated Firewall)..."
+    echo
     sleep 3
     sudo apt-get -y install ufw
     echo && echo "Configuring UFW..."
@@ -128,12 +133,14 @@ fi
 
 # Download polis
 echo && echo "Downloading polis v1.1.0..."
+echo
 sleep 3
 git clone https://github.com/polispay/polis
 
 
 # Install polis
 echo && echo "Installing poliscore-1.1.0..."
+echo
 sleep 3
 cd polis
 ./autogen.sh
@@ -142,6 +149,7 @@ make
 
 # Create config for poliscore
 echo && echo "Configuring poliscore-1.1.0..."
+echo
 sleep 3
 rpcuser=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
 rpcpassword=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
@@ -164,6 +172,7 @@ masternode=1
 
 # Setup systemd service
 echo && echo "Starting polis deamon..."
+echo
 sleep 3
 sudo touch /etc/systemd/system/polisd.service
 echo '[Unit]
@@ -184,6 +193,7 @@ sudo systemctl start polisd
 
 # Download and install sentinel
 echo && echo "Installing Sentinel..."
+echo
 sleep 3
 sudo apt-get -y install virtualenv python-pip
 sudo git clone https://github.com/polispay/sentinel /home/masternode/sentinel
