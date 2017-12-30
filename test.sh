@@ -131,7 +131,7 @@ if [[ ("$UFW" == "y" || "$UFW" == "Y" || "$UFW" == "") ]]; then
 fi
 
 # Download polis
-echo && echo "Downloading ..."
+echo && echo "Downloading polis v1.1.0..."
 sleep 3
 git clone https://github.com/polispay/polis
 
