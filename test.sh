@@ -2,13 +2,12 @@
 
 clear
 cd ~
-echo "**********************************************************************"
-echo "* Ubuntu 16.04 is the recommended opearting system for this install. *"
-echo
-echo "* This script will install and configure your polis masternode.      *"
-echo "* All binaries will be compiled from sources so it's going to take   *"
-echo "* a while. Grab yourself a cup of coffe or just hang out  ;-)        *"
-echo "**********************************************************************"
+echo "*************************************************************************"
+echo "* Ubuntu 16.04 is the recommended opearting system for this install.    *"
+echo "* This script will install and configure your polis masternode.         *" 
+echo "* All binaries will be compiled from sources so it's going to take      *"
+echo "* a while. Grab yourself a cup of coffe or just hang out for 1hr or so  *"
+echo "*************************************************************************"
 echo && echo && echo
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo "!                                                 !"
@@ -142,7 +141,7 @@ cd polis
 make
 
 # Create config for poliscore
-echo && echo "Configuring poliscore-1.0.0..."
+echo && echo "Configuring poliscore-1.1.0..."
 sleep 3
 rpcuser=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
 rpcpassword=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
