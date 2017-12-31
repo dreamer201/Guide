@@ -185,6 +185,10 @@ pip install -r requirements.txt
 export EDITOR=nano
 (crontab -l -u masternode 2>/dev/null; echo '* * * * * cd /home/masternode/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1') | sudo crontab -u masternode -
 cd ~
+# Configuring monit
+wget https://raw.githubusercontent.com/digitalmine/Guide/master/polis_node.sh
+chmod u+x polis_node.sh
+
 
 # Add alias to run polis-cli
 #echo && echo "Masternode setup complete!"
