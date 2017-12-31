@@ -146,7 +146,7 @@ echo && echo "Installing poliscore-1.1.0..."
 echo
 sleep 3
 unzip -v poliscore-1.1.0-linux.zip
-sudo cp /poliscore-1.1.0-linux/usr/local/bin/polis{d,-cli} /usr/bin
+sudo cp ~/poliscore-1.1.0-linux/usr/local/bin/polis{d,-cli} /usr/bin
 
 # Create config for poliscore
 echo && echo "Configuring poliscore-1.1.0..."
