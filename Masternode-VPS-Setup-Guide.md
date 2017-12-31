@@ -59,7 +59,8 @@ wget https://raw.githubusercontent.com/digitalmine/Guide/master/install_masterno
 ```
 3. When prompted, enter your private key from before.
 4. You will be asked for your VPS IP and a few other questions.
-5. The installation process should follow on.
+5. The installation process should follow on. You may need to input sudo password for user `masternode`
+   now and then, or hit enter when prompted.
 6. When it's finished you have to configure monit. Type in:
 
 `sudo nano /etc/monit/monitrc`
