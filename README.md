@@ -1,3 +1,7 @@
+# warning: the guide is not operational at the moment
+   due to new poliscore v1.1.0
+   I'm working on it...
+
 # ULTIMATE GUIDE
  for setting up a POLIS masternode.
  * Noobs friendly.
