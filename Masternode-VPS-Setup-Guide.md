@@ -35,8 +35,20 @@
 
 ## VPS Setup
 
-1. Log into your VPS
-   - Windows users [follow this guide](https://www.digitalocean.com/community/tutorials/how-to-log-into-your-droplet-with-putty-for-windows-users) to log into your VPS.
+This installation takes on a bit different approach. Instead of using `systemd` it relies on `monit`
+
+1. Log into your VPS (Windows users [follow this guide](https://www.digitalocean.com/community/tutorials/how-to-log-into-your-droplet-with-putty-for-windows-users) to log into your VPS.)
+    1A. Add new user whose name is masternode and add him/her to sudoers. You'll be ask for a new password for this user and
+        you have to type it in twice. Keep the password safe as you'll need it to operate MN.
+        ```
+        adduser masternode && adduser masternode sudo
+        ```
+     1B. Log in as a user masternode
+     ```su masternode
+     ```
+     1C. Change to masternode's home directory
+     ```cd ~
+     ```
 2. Copy/paste command into the VPS and hit enter: (For this step you will need your `private key` 
    generated at step 5 above and your VPS IP address)
 ```
@@ -44,12 +56,29 @@ wget https://raw.githubusercontent.com/digitalmine/Guide/master/install_masterno
 ```
 3. When prompted, enter your private key from before.
 4. You will be asked for your VPS IP and a few other questions.
-5. The installation should finish successfully. 
-6. Copy command to source alias
+5. The installation process should follow on.
+6. When it's finished you have to configure `monit`. Type in:
+```sudo nano /etc/monit/monitrc
 ```
-source ~/.bash_aliases
+and the VERY BOTTOM of this file paste this:
+```### added on setup for zend
+set httpd port 2812
+use address localhost # only accept connection from localhost 
+allow localhost # allow localhost to connect to the server
+#
+### polisd process control
+check process polisd with pidfile /home/masternode/.poliscore/polisd.pid
+start program = "/home/masternode/polis_node.sh start" with timeout 60 seconds
+stop program = "/home/masternode/polis_node.sh stop"
 ```
-Your poliscore (`polisd`) should be up and running by now.
+safe and exit the file (`ctrl+o`, then hit enter and then `ctrl+x`)
+Now load new configuration for `monit`:
+```sudo monit reload
+```
+and enable monitoring service
+```sudo monit start polisd
+```
+
 7.Use `polis-cli getinfo` to check and wait til it's synced 
   (look for blocks number and compare with block explorer http://polispay.org:3001/ )
 
