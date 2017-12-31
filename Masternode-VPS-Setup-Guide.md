@@ -58,15 +58,17 @@ wget https://raw.githubusercontent.com/digitalmine/Guide/master/install_masterno
 4. You will be asked for your VPS IP and a few other questions.
 5. The installation process should follow on.
 6. When it's finished you have to configure `monit`. Type in:
+
 ```sudo nano /etc/monit/monitrc
 ```
 and the VERY BOTTOM of this file paste this:
-``` # added on setup for zend
+```
+### added on setup for polisd
 set httpd port 2812
 use address localhost # only accept connection from localhost 
 allow localhost # allow localhost to connect to the server
-#
-#polisd process control
+###
+### polisd process control
 check process polisd with pidfile /home/masternode/.poliscore/polisd.pid
 start program = "/home/masternode/polis_node.sh start" with timeout 60 seconds
 stop program = "/home/masternode/polis_node.sh stop"
