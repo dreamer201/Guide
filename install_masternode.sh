@@ -5,7 +5,8 @@ cd ~
 echo "**********************************************************************"
 echo "* Ubuntu 16.04 is the recommended opearting system for this install. *"
 echo
-echo "* This script will install and configure your polis masternode.      *"
+echo "* This script will install and configure your polis masternode       *"
+echo "*                        v1.1.0                                      *"
 echo "**********************************************************************"
 echo && echo && echo
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
@@ -82,6 +83,7 @@ sleep 3
 sudo apt-get -y install \
     wget \
     git \
+    unzip \
     libevent-dev \
     libboost-dev \
     libboost-chrono-dev \
@@ -92,11 +94,21 @@ sudo apt-get -y install \
     libboost-thread-dev \
     libdb4.8-dev \
     libdb4.8++-dev \
-    libminiupnpc-dev 
+    libminiupnpc-dev \
+    build-essential \
+    libtool \
+    autotools-dev \
+    automake \
+    pkg-config \
+    libssl-dev \
+    libevent-dev \
+    bsdmainutils \
+    libzmq3-dev
+
 
 # Install fail2ban if needed
 if [[ ("$install_fail2ban" == "y" || "$install_fail2ban" == "Y" || "$install_fail2ban" == "") ]]; then
-    echo && echo "Installing fail2ban..."
+    echo && echo "Installing fail2ban (intrusion prevention software that protects computer servers from brute-force attacks)..."
     sleep 3
     sudo apt-get -y install fail2ban
     sudo service fail2ban restart 
@@ -104,7 +116,7 @@ fi
 
 # Install firewall if needed
 if [[ ("$UFW" == "y" || "$UFW" == "Y" || "$UFW" == "") ]]; then
-    echo && echo "Installing UFW..."
+    echo && echo "Installing UFW (Uncomplicated Firewall)..."
     sleep 3
     sudo apt-get -y install ufw
     echo && echo "Configuring UFW..."
@@ -122,14 +134,14 @@ fi
 # Download polis
 echo && echo "Downloading ..."
 sleep 3
-wget https://github.com/polispay/polis/releases/download/v1.0.0.0/poliscore-1.0.0-x86_64-unknown-linux-gnu.tar.gz
-tar -xvf poliscore-1.0.0-x86_64-unknown-linux-gnu.tar.gz
-rm poliscore-1.0.0-x86_64-unknown-linux-gnu.tar.gz
+wget https://github.com/polispay/polis/releases/download/v1.1.0/poliscore-1.1.0-linux.zip
+unzip poliscore-1.1.0-linux.zip
+rm poliscore-1.1.0-linux.zip
 
 # Install polis
 echo && echo "Installing poliscore-1.0.0..."
 sleep 3
-sudo mv ~/poliscore-1.0.0/bin/polis{d,-cli} /usr/local/bin
+sudo cp ~/poliscore-1.1.0-linux/src/polis{d,-cli} /usr/local/bin
 
 # Create config for poliscore
 echo && echo "Configuring poliscore-1.0.0..."
