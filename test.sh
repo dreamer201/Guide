@@ -4,9 +4,9 @@ clear
 cd ~
 echo "*************************************************************************"
 echo "* Ubuntu 16.04 is the recommended opearting system for this install.    *"
-echo "* This script will install and configure your polis masternode.         *" 
-echo "* All binaries will be compiled from sources so it's going to take      *"
-echo "* a while. Grab yourself a cup of coffe or just hang out for 1hr or so  *"
+echo "*                                                                       *"
+echo "* This script will install and configure your polis masternode          *"
+echo "*                         v1.1.0                                        *"
 echo "*************************************************************************"
 echo && echo && echo
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
