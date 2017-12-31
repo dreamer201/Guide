@@ -83,6 +83,7 @@ sleep 3
 sudo apt-get -y install \
     wget \
     git \
+    monit \
     libevent-dev \
     libboost-dev \
     libboost-chrono-dev \
