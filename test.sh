@@ -170,14 +170,14 @@ masternodeprivkey='$key'
 masternode=1
 ' | tee /home/masternode/.poliscore/polis.conf
 # start polisd
-polisd
+polisd -daemon
 
 # Download and install sentinel
 echo && echo "Installing Sentinel..."
 echo
 sleep 3
 sudo apt-get -y install virtualenv python-pip
-sudo git clone https://github.com/polispay/sentinel /home/masternode/sentinel
+git clone https://github.com/polispay/sentinel /home/masternode/sentinel
 cd /home/masternode/sentinel
 virtualenv venv
 . venv/bin/activate
