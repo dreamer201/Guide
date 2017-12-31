@@ -45,11 +45,12 @@ This installation takes on a bit different approach. Instead of using `systemd` 
         adduser masternode && adduser masternode sudo
         
      1B. Log in as a user masternode
-     ```su masternode
-     ```
+     
+     su masternode
+     
      1C. Change to masternode's home directory
-     ```cd ~
-     ```    
+     
+     cd ~   
 2. Copy/paste command into the VPS and hit enter: (For this step you will need your `private key` 
    generated at step 5 above and your VPS IP address)
 ```
