@@ -89,6 +89,12 @@ and enable monitoring service
 
 `sudo monit start polisd`
 
+Now your `polisd` should be monitored by `monit`. To check it run
+
+`sudo monit status`
+
+The whole thing will keep the `polisd` running. If you really want to stop `polisd` then use `sudo monit stop polisd`.
+
 7.Use `polis-cli getinfo` to check and wait til it's synced
 
   (look for blocks number and compare with block explorer http://explorer.polispay.org/insight/ )
