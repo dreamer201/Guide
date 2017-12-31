@@ -42,7 +42,7 @@ This installation takes on a bit different approach. Instead of using `systemd` 
     1A. Add new user whose name is masternode and add him/her to sudoers. You'll be ask for a new password for this user and
         you have to type it in twice. Keep the password safe as you'll need it to operate MN.
         
-        `adduser masternode && adduser masternode sudo`
+        adduser masternode && adduser masternode sudo
         
      1B. Log in as a user masternode
      ```su masternode
