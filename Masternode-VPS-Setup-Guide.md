@@ -43,7 +43,7 @@ This installation takes on a bit different approach. Instead of using `systemd` 
         you have to type it in twice. Keep the password safe as you'll need it to operate MN.
         
         
-        `# adduser masternode && adduser masternode sudo`
+        `# adduser masternode &&amp;&&amp; adduser masternode sudo`
         
         
         
