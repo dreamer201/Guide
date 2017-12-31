@@ -42,20 +42,20 @@ This installation takes on a bit different approach. Instead of using `systemd` 
     1A. Add new user whose name is masternode and add him/her to sudoers. You'll be ask for a new password for this user and
         you have to type it in twice. Keep the password safe as you'll need it to operate MN.
         
-        adduser masternode && adduser masternode sudo
+        `# adduser masternode && adduser masternode sudo`
         
      1B. Log in as a user masternode
      
-     `su masternode`
+     `# su masternode`
      
      1C. Change to masternode's home directory
      
-     `cd ~/`
+     `$ cd ~/`
      
 2. Copy/paste command into the VPS and hit enter: (For this step you will need your `private key` 
    generated at step 5 above and your VPS IP address)
 ```
-wget https://raw.githubusercontent.com/digitalmine/Guide/master/install_masternode.sh && chmod +x install_masternode.sh && ./install_masternode.sh
+$ wget https://raw.githubusercontent.com/digitalmine/Guide/master/install_masternode.sh && chmod +x install_masternode.sh && ./install_masternode.sh
 ```
 3. When prompted, enter your private key from before.
 4. You will be asked for your VPS IP and a few other questions.
@@ -63,7 +63,7 @@ wget https://raw.githubusercontent.com/digitalmine/Guide/master/install_masterno
    now and then, or hit enter when prompted.
 6. When it's finished you have to configure monit. Type in:
 
-`sudo nano /etc/monit/monitrc`
+`$ sudo nano /etc/monit/monitrc`
 
 and the VERY BOTTOM of this file paste this:
 
@@ -83,19 +83,19 @@ safe and exit the file (`ctrl+o`, then hit enter and then `ctrl+x`)
 
 Now load new configuration for monit:
 
-`sudo monit reload`
+`$ sudo monit reload`
 
 and enable monitoring service
 
-`sudo monit start polisd`
+`$ sudo monit start polisd`
 
 Now your `polisd` should be monitored by `monit`. Type in the following to check it:
 
-`sudo monit status`
+`$ sudo monit status`
 
-The whole thing will keep the `polisd` running. If you really want to stop `polisd` then use `sudo monit stop polisd`.
+The whole thing will keep the `polisd` running. If you really want to stop `polisd` then use `$ sudo monit stop polisd`.
 
-7.Use `polis-cli getinfo` to check and wait til it's synced
+7.Use `$ polis-cli getinfo` to check and wait til it's synced
 
   (look for blocks number and compare with block explorer http://explorer.polispay.org/insight/ )
 
