@@ -145,7 +145,7 @@ wget https://github.com/polispay/polis/releases/download/v1.1.0/poliscore-1.1.0-
 echo && echo "Installing poliscore-1.1.0..."
 echo
 sleep 3
-unzip -v poliscore-1.1.0-linux.zip
+unzip ~/poliscore-1.1.0-linux.zip
 sudo cp ~/poliscore-1.1.0-linux/usr/local/bin/polis{d,-cli} /usr/bin
 
 # Create config for poliscore
