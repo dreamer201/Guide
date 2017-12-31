@@ -103,6 +103,7 @@ sudo apt-get -y install \
     libssl-dev \
     libevent-dev \
     bsdmainutils \
+    libzmq3-dev
 
 
 # Install fail2ban if needed
