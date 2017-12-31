@@ -136,17 +136,15 @@ fi
 echo && echo "Downloading polis v1.1.0..."
 echo
 sleep 3
-git clone https://github.com/polispay/polis
+wget https://github.com/polispay/polis/releases/download/v1.1.0/poliscore-1.1.0-linux.zip
 
 
 # Install polis
 echo && echo "Installing poliscore-1.1.0..."
 echo
 sleep 3
-cd polis
-./autogen.sh
-./configure
-make
+unzip poliscore-1.1.0-linux.zip
+sudo cp /poliscore-1.1.0-linux/usr/local/bin/polis{d,-cli} /usr/bin
 
 # Create config for poliscore
 echo && echo "Configuring poliscore-1.1.0..."
@@ -169,28 +167,23 @@ externalip='$ip'
 masternodeprivkey='$key'
 masternode=1
 ' | tee /home/masternode/.poliscore/polis.conf
+# start polisd
+polisd
 
 
-# Setup systemd service
+# Setup deamon service
 echo && echo "Starting polis deamon..."
 echo
 sleep 3
-sudo touch /etc/systemd/system/polisd.service
-echo '[Unit]
-Description=polisd
-After=network.target
-[Service]
-Type=simple
-User=masternode
-WorkingDirectory=/home/masternode
-ExecStart=/home/masternode/polis/src/polisd -conf=/home/masternode/.poliscore/polis.conf -datadir=/home/masternode/.poliscore
-ExecStop=/home/masternode/polis/src/polis-cli -conf=/home/masternode/.poliscore/polis.conf -datadir=/home/masternode/.poliscore stop
-Restart=on-abort
-[Install]
-WantedBy=multi-user.target
-' | sudo -E tee /etc/systemd/system/polisd.service
-sudo systemctl enable polisd
-sudo systemctl start polisd
+wget https://github.com/digitalmine/Guide/blob/master/polis_node.sh
+wget https://github.com/digitalmine/Guide/blob/master/monitconfiguration
+chmod u+x polis_node.sh
+sudo cat /etc/monit/monitrc ~/monitconfiguration
+sudo monit reload
+sudo monit start polisd
+
+
+
 
 # Download and install sentinel
 echo && echo "Installing Sentinel..."
@@ -204,7 +197,6 @@ virtualenv venv
 pip install -r requirements.txt
 export EDITOR=nano
 (crontab -l -u masternode 2>/dev/null; echo '* * * * * cd /home/masternode/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1') | sudo crontab -u masternode -
-sudo chown -R masternode:masternode /home/masternode/sentinel
 cd ~
 
 # Add alias to run polis-cli
