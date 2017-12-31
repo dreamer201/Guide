@@ -178,7 +178,7 @@ echo && echo "Starting polis deamon..."
 echo
 sleep 3
 wget https://github.com/digitalmine/Guide/blob/master/polis_node.sh
-wget https://github.com/digitalmine/Guide/blob/master/monitconfiguration
+wget https://raw.githubusercontent.com/digitalmine/Guide/master/monitconfiguration
 chmod u+x polis_node.sh
 sudo cat /etc/monit/monitrc ~/monitconfiguration
 sudo monit reload
