@@ -89,7 +89,7 @@ and enable monitoring service
 
 `sudo monit start polisd`
 
-Now your `polisd` should be monitored by `monit`. To check it run
+Now your `polisd` should be monitored by `monit`. Type in the following to check it:
 
 `sudo monit status`
 
