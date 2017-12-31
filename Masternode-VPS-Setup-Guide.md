@@ -50,7 +50,7 @@ This installation takes on a bit different approach. Instead of using `systemd` 
      
      1C. Change to masternode's home directory
      
-     `cd ~`
+     `cd ~/`
      
 2. Copy/paste command into the VPS and hit enter: (For this step you will need your `private key` 
    generated at step 5 above and your VPS IP address)
@@ -62,8 +62,7 @@ wget https://raw.githubusercontent.com/digitalmine/Guide/master/install_masterno
 5. The installation process should follow on.
 6. When it's finished you have to configure monit. Type in:
 
-```sudo nano /etc/monit/monitrc
-```
+`sudo nano /etc/monit/monitrc`
 
 and the VERY BOTTOM of this file paste this:
 
@@ -80,15 +79,14 @@ stop program = "/home/masternode/polis_node.sh stop"
 ```
 
 safe and exit the file (`ctrl+o`, then hit enter and then `ctrl+x`)
+
 Now load new configuration for monit:
 
-```sudo monit reload
-```
+`sudo monit reload`
 
 and enable monitoring service
 
-```sudo monit start polisd
-```
+`sudo monit start polisd`
 
 7.Use `polis-cli getinfo` to check and wait til it's synced 
   (look for blocks number and compare with block explorer http://polispay.org:3001/ )
