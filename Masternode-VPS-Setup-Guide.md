@@ -88,8 +88,9 @@ and enable monitoring service
 
 `sudo monit start polisd`
 
-7.Use `polis-cli getinfo` to check and wait til it's synced 
-  (look for blocks number and compare with block explorer http://polispay.org:3001/ )
+7.Use `polis-cli getinfo` to check and wait til it's synced
+
+  (look for blocks number and compare with block explorer http://explorer.polispay.org/insight/ )
 
 
 ## Cold Wallet Setup Part 2 
