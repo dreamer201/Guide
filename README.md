@@ -1,9 +1,7 @@
-# warning: the guide is not operational at the moment
-   due to new poliscore v1.1.0
-   
-   I'm working on it...
-
 # ULTIMATE GUIDE
+
+ Updated for version 1.1.0
+ 
  for setting up a POLIS masternode.
  * Noobs friendly.
  * With added security features to your VPS
