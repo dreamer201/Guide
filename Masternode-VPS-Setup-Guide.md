@@ -61,12 +61,12 @@ wget https://raw.githubusercontent.com/digitalmine/Guide/master/install_masterno
 ```sudo nano /etc/monit/monitrc
 ```
 and the VERY BOTTOM of this file paste this:
-```### added on setup for zend
+``` # added on setup for zend
 set httpd port 2812
 use address localhost # only accept connection from localhost 
 allow localhost # allow localhost to connect to the server
 #
-### polisd process control
+#polisd process control
 check process polisd with pidfile /home/masternode/.poliscore/polisd.pid
 start program = "/home/masternode/polis_node.sh start" with timeout 60 seconds
 stop program = "/home/masternode/polis_node.sh stop"
