@@ -172,21 +172,6 @@ masternode=1
 # start polisd
 polisd
 
-
-# Setup deamon service
-echo && echo "Starting polis deamon..."
-echo
-sleep 3
-wget https://github.com/digitalmine/Guide/blob/master/polis_node.sh
-wget https://raw.githubusercontent.com/digitalmine/Guide/master/monitconfiguration
-chmod u+x polis_node.sh
-sudo cat /etc/monit/monitrc ~/monitconfiguration >> /etc/monit/monitrc
-sudo monit reload
-sudo monit start polisd
-
-
-
-
 # Download and install sentinel
 echo && echo "Installing Sentinel..."
 echo
