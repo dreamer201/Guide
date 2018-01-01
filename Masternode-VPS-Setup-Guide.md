@@ -38,34 +38,34 @@
 This installation takes on a bit different approach. Instead of using `systemd` it relies on `monit`
 
 1. Log into your VPS (Windows users [follow this guide](https://www.digitalocean.com/community/tutorials/how-to-log-into-your-droplet-with-putty-for-windows-users) to log into your VPS.)
-
-    1A. Add new user whose name is masternode and add him/her to sudoers.
-        You'll be ask for a new password for this user and you have to type
-        it in twice. Keep the password safe as you'll need it to operate MN.
-        `adduser masternode && adduser masternode sudo`
-        
-        1B. Log in as a user masternode
-     
-     `# su masternode`
-     
-     1C. Change to masternode's home directory
-     
-     `$ cd ~/`
-     
-2. Copy/paste command into the VPS and hit enter: (For this step you will need your `private key` 
-   generated at step 5 above and your VPS IP address)
+2 Add new user whose name is masternode and add him/her to sudoers.
+  You'll be ask for a new password for this user and you have to type
+  it in twice. Keep the password safe as you'll need it to operate MN.
+  
+  `adduser masternode && adduser masternode sudo`
+  
+3.Log in as a user masternode
+  
+  `# su masternode`
+  
+4 Change to masternode's home directory
+  
+  `$ cd ~/`
+  
+5. Copy/paste command into the VPS and hit enter: (For this step you will need your `private key` 
+     generated at step 5 above and your VPS IP address)
 ```
 $ wget https://raw.githubusercontent.com/digitalmine/Guide/master/install_masternode.sh && chmod +x install_masternode.sh && ./install_masternode.sh
 ```
-3. When prompted, enter your private key from before.
-4. You will be asked for your VPS IP and a few other questions.
-5. The installation process should follow on. You may need to input sudo password for user `masternode`
+6. When prompted, enter your private key from before.
+7. You will be asked for your VPS IP and a few other questions.
+8. The installation process should follow on. You may need to input sudo password for user `masternode`
    now and then, or hit enter when prompted. Wait til you see:
    
    ![Alt text](https://github.com/digitalmine/Guide/blob/master/image2.png "")
    
    
-6. When it's finished you have to configure monit. Type in:
+9. When it's finished you have to configure monit. Type in:
 
 `$ sudo nano /etc/monit/monitrc`
 
@@ -99,7 +99,7 @@ Now your `polisd` should be monitored by `monit`. Type in the following to check
 
 The whole thing will keep the `polisd` running. If you really want to stop `polisd` then use `$ sudo monit stop polisd`.
 
-7.Use `$ polis-cli getinfo` to check and wait til it's synced
+10. Use `$ polis-cli getinfo` to check and wait til it's synced
 
   (look for blocks number and compare with block explorer http://explorer.polispay.org/insight/ )
 
