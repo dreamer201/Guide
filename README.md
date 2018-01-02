@@ -1,4 +1,4 @@
-![Alt text]https://github.com/digitalmine/Guide/blob/master/digitalmine.jpg
+![Alt text](https://github.com/digitalmine/Guide/blob/master/digitalmine.jpg)
 
 
 # ULTIMATE GUIDE
