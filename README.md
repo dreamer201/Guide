@@ -1,3 +1,6 @@
+![Alt text]https://github.com/digitalmine/Guide/blob/master/digitalmine.jpg
+
+
 # ULTIMATE GUIDE
 # Updated for version 1.1.0
  
