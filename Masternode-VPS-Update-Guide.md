@@ -2,6 +2,7 @@
 
 
 1. `cd ~/ && sudo monit status polisd`
+
    If you followed my earlier Setup Guide you should get:
    
    
