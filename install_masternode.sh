@@ -6,7 +6,7 @@ echo "*************************************************************************"
 echo "* Ubuntu 16.04 is the recommended opearting system for this install.    *"
 echo "*                                                                       *"
 echo "* This script will install and configure your polis masternode          *"
-echo "*                         v1.2.0                                        *"
+echo "*                         v1.2.1                                        *"
 echo "*************************************************************************"
 echo && echo && echo
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
@@ -135,22 +135,22 @@ if [[ ("$UFW" == "y" || "$UFW" == "Y" || "$UFW" == "") ]]; then
 fi
 
 # Download polis
-echo && echo "Downloading polis v1.2.0..."
+echo && echo "Downloading polis v1.2.1..."
 echo
 sleep 3
-wget https://github.com/polispay/polis/releases/download/v1.2.0/poliscore-1.2.0-linux.zip
+wget https://github.com/polispay/polis/releases/download/v1.2.1/poliscore-1.2.1-linux64.tar.gz
 
 
 # Install polis
-echo && echo "Installing poliscore-1.2.0..."
+echo && echo "Installing poliscore-1.2.1..."
 echo
 sleep 3
-unzip ~/poliscore-1.2.0-linux.zip
-sudo cp ~/poliscore-1.2.0-linux/usr/local/bin/polis{d,-cli} /usr/bin
-rm - poliscore-1.2.0-linux.zip
+tar -xzvf ~/poliscore-1.2.1-linux64.tar.gz
+sudo cp ~/poliscore-1.2.1/usr/local/bin/polis{d,-cli} /usr/bin
+rm -R ~/poliscore-1.2.1-linux64.tar.gz ~/poliscore-1.2.1-linux64.tar.gz
 
 # Create config for poliscore
-echo && echo "Configuring poliscore-1.2.0..."
+echo && echo "Configuring poliscore-1.2.1..."
 echo
 sleep 3
 rpcuser=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
