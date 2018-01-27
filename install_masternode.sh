@@ -146,7 +146,7 @@ echo && echo "Installing poliscore-1.2.1..."
 echo
 sleep 3
 tar -xzvf ~/poliscore-1.2.1-linux64.tar.gz
-sudo cp ~/poliscore-1.2.1/usr/local/bin/polis{d,-cli} /usr/bin
+sudo cp ~/poliscore-1.2.1/bin/polis{d,-cli} /usr/bin
 rm -R ~/poliscore-1.2.1-linux64.tar.gz ~/poliscore-1.2.1-linux64.tar.gz
 
 # Create config for poliscore
