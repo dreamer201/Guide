@@ -3,6 +3,7 @@
 
 # ULTIMATE GUIDE
 # Updated for version 1.2.1
+# NOT MAINTAINED
  
  for setting up a POLIS masternode.
  * Noobs friendly.
